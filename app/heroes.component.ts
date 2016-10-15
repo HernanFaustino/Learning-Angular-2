@@ -53,14 +53,13 @@ export class HeroesComponent implements OnInit {
               {type: "button", name:"cancel",value: "Cancelar", offsetLeft: 8}
           ]}
       ];
-
     var myForm = new dhtmlXForm("example-dhtmlx", formData);
+    var temp = this;
     myForm.attachEvent('onButtonClick', function(name){
       if(name=="save"){
-        this.add(myForm.getItemValue("name"));
+        temp.add(myForm.getItemValue("name"));
       }
     });
-
   }
 
   delete(hero: Hero): void {
